@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% extends 'main.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout Details</title>
+</head>
+<body>
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title" style="text-align:center;">Display Checkout Details</h4><br>
+
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            First Name
+                          </th>
+                          <th>
+                            Last Name
+                          </th>
+                          <th>
+                            State
+                          </th>
+                          <th>
+                            Street Name
+                          </th>
+                          <th>
+                            Post Code
+                          </th>
+                           <th>
+                            Town
+                          </th>
+                           <th>
+                            Phone
+                          </th>
+                           <th>
+                            Grand Total
+                          </th>
+                          <th>
+                            Cancel
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for i in check %}
+                        <tr>
+                          <td class="py-1">
+                        {{i.First}}
+                          </td>
+                          <td>
+                         {{i.Last}}
+                          </td>
+                          <td>
+                          {{i.State}}
+                          </td>
+                          <td>
+                           {{i.Street}}
+                          </td>
+                          <td>
+                           {{i.Postal}}
+                          </td>
+                           <td>
+                           {{i.Town}}
+                          </td>
+                           <td>
+                           {{i.Phone}}
+                          </td>
+                           <td>
+                           {{i.Grat}}
+                          </td>
+                          <td>
+                            <form action="{% url 'deletecheck' dataid=i.id %}">
+                              <button type="submit" class="btn btn-outline-danger">X</button>
+                            </form>
+                          </td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+</body>
+</html>
+{% endblock %}

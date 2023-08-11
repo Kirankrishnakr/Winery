@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% extends 'main.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body" style="background-color:lavender; font-weight:bold;">
+                  <b><h4 style="text-align:center;">Add Your Products</h4></b><br><br>
+
+                  <form class="forms-sample" method="post" action="{% url 'savcat' %}" enctype="multipart/form-data">
+                      {% csrf_token %}
+                       <div class="form-group">
+                        <label for="examplecategory">Product Name</label>
+                      <label for="examplecategory">Price</label>
+                      <input type="text" class="form-control" id="examplecategory" placeholder="Product Name" name="Cname">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Description</label>
+                      <textarea class="form-control" id="exampleTextarea1" rows="4"  name="description" placeholder="Overview"></textarea>
+                    </div>
+                     <div class="form-group">
+                      <label for="examplePrice">Price</label>
+                      <input type="text" class="form-control" id="examplePrice" placeholder="Price" name="price">
+                    </div>
+                     <div class="form-group">
+                      <label for="examplequantity">Quantity</label>
+                     <input type="text" class="form-control" id="examplequantity" placeholder="Quantity" name="quantity">
+                    </div>
+                    <div class="form-group">
+                      <label for="examplevintage">Vintage</label>
+                     <input type="text" class="form-control" id="examplevintage" placeholder="Vintage" name="vintage">
+                    </div>
+                    <div class="form-group">
+                      <label for="examplevariety">Varieties Used</label>
+                     <input type="text" class="form-control" id="examplevariety" placeholder="variety" name="varieties">
+                    </div>
+                      <div class="form-group" style="border-radius:10px; font-weight:bold; color:dodgerblue; border:thin solid grey;">
+                     <label>File Upload</label><br>
+                      <input type="file" name="cimage">
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+</body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+ {% if messages %}
+{% for i in messages %}
+
+{% if i.tags == 'warning' %}
+<script>
+    swal('{{i}}','','warning');
+</script>
+{% elif i.tags == 'error' %}
+<script>
+    swal('{{i}}','','success');
+</script>
+
+{% else %}
+<script>
+    swal('{{i}}','','success');
+</script>
+{% endif %}
+{% endfor %}
+{% endif %}
+</html>
+{% endblock %}

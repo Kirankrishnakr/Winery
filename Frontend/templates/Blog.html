@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Winery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+              <link rel="stylesheet" href="style.css">
+
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+
+  	<div class="wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 d-flex align-items-center">
+						<p class="mb-0 phone pl-md-2">
+<!--							<a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +00 1234 567</a>-->
+							<a href="#"><span class="fa fa-paper-plane mr-1"></span> Winery@email.com</a>
+						</p>
+					</div>
+					<div class="col-md-6 d-flex justify-content-md-end">
+						<div class="social-media mr-4">
+			    		<p class="mb-0 d-flex">
+<!--			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>-->
+<!--			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>-->
+			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+			    		</p>
+		        </div>
+<!--		        <div class="reg">-->
+<!--		        	<p class="mb-0"><a href="#" class="mr-2">Sign Up</a> <a href="#">Log In</a></p>-->
+<!--		        </div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'home' %}">Wine<span>ry</span></a>
+<!--	      <div class="order-lg-last btn-group">-->
+<!--          <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          	<span class="flaticon-shopping-bag"></span>-->
+<!--          	<div class="d-flex justify-content-center align-items-center"><small>3</small></div>-->
+<!--          </a>-->
+<!--          <div class="dropdown-menu dropdown-menu-right">-->
+<!--				    <div class="dropdown-item d-flex align-items-start" href="#">-->
+<!--				    	<div class="img" style="background-image: url({% static 'images/prod-1.jpg' %});"></div>-->
+<!--				    	<div class="text pl-3">-->
+<!--				    		<h4>Bacardi 151</h4>-->
+<!--				    		<p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity: 01</span></p>-->
+<!--				    	</div>-->
+<!--				    </div>-->
+<!--				    <div class="dropdown-item d-flex align-items-start" href="#">-->
+<!--				    	<div class="img" style="background-image: url({% static 'images/prod-2.jpg' %});"></div>-->
+<!--				    	<div class="text pl-3">-->
+<!--				    		<h4>Jim Beam Kentucky Straight</h4>-->
+<!--				    		<p class="mb-0"><a href="#" class="price">$30.89</a><span class="quantity ml-3">Quantity: 02</span></p>-->
+<!--				    	</div>-->
+<!--				    </div>-->
+<!--				    <div class="dropdown-item d-flex align-items-start" href="#">-->
+<!--				    	<div class="img" style="background-image: url({% static 'images/prod-3.jpg' %});"></div>-->
+<!--				    	<div class="text pl-3">-->
+<!--				    		<h4>Citadelle</h4>-->
+<!--				    		<p class="mb-0"><a href="#" class="price">$22.50</a><span class="quantity ml-3">Quantity: 01</span></p>-->
+<!--				    	</div>-->
+<!--				    </div>-->
+<!--				    <a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">-->
+<!--				    	View All-->
+<!--				    	<span class="ion-ios-arrow-round-forward"></span>-->
+<!--				    </a>-->
+<!--				  </div>-->
+<!--        </div>-->
+
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+	          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="{% url 'products' %}">Products</a>
+<!--                <a class="dropdown-item" href="product-single.html">Single Product</a>-->
+                <a class="dropdown-item" href="{% url 'cart' %}">Cart</a>
+                <a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a>
+              </div>
+            </li>
+	          <li class="nav-item active"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('{% static 'images/wall16.jpg' %}');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate mb-5 text-center">
+<!--          	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Blog <i class="fa fa-chevron-right"></i></span></p>-->
+            <h2 class="mb-0 bread">Blog</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <span class="background">
+            <span class="centering">
+                <section class="articles">
+                    <article>
+                        <figure>
+                            <img
+                                src="{% static 'images/wall18.jpg' %}"
+                                alt="Preview"
+                                title="Preview"
+                            />
+                        </figure>
+                        <div class="article-preview">
+                            <h2>What is a Non-Alcoholic Wine?</h2>
+                            <p>
+                               Non-alcoholic wine (also known as dealcoholized wine) is wine that has been filtered to remove the alcohol.
+                                NA wine still contains small amounts of alcohol, similar to what you might find in kombucha.
+                                However, this trace ABV is typically considered safe for people who don't drink alcohol.
+
+                            </p>
+                        </div>
+                    </article>
+                    <article>
+                        <figure>
+                            <img
+                                src="{% static 'images/wall8.jpg' %}"
+                                alt="Preview"
+                                title="Preview"
+                            />
+                        </figure>
+                        <div class="article-preview">
+                            <h2>How to make Red Wines?</h2>
+                            <p>
+                                Red wine is an alcoholic beverage made by fermenting the juice of dark-skinned grapes.
+                                Red wine differs from white wine in its base material and production process.
+                                Red wine is made with dark-skinned rather than light-skinned grapes.
+
+                            </p>
+                        </div>
+                    </article>
+                    <!-- more cards here  -->
+
+
+
+                      <article>
+                        <figure>
+                            <img
+                                src="{% static 'images/wall15.jpg' %}"
+                                alt="Preview"
+                                title="Preview"
+                            />
+                        </figure>
+                        <div class="article-preview">
+                            <h2>What are the ingriedients to make Wine</h2>
+                            <p>
+                               Wine is an alcoholic drink typically made from fermented grapes.
+                                Yeast consumes the sugar in the grapes and converts it to ethanol and carbon dioxide, releasing heat in the process.
+                                Different varieties of grapes and strains of yeasts are major factors in different styles of wine.
+                            </p>
+                        </div>
+                    </article>
+                      <article>
+                        <figure>
+                            <img
+                                src="{% static 'images/wall11.jpg' %}"
+                                alt="Preview"
+                                title="Preview"
+                            />
+                        </figure>
+                        <div class="article-preview">
+                            <h2>How good Wine Taste's like?</h2>
+                            <p>
+                                Wines with full, pleasant flavours that are sweet and 'rounded' in nature are described as rich.
+                                In dry wines, richness may come from high alcohol, by complex flavours or by an oaky vanilla character
+
+                            </p>
+                        </div>
+                    </article>
+                    <article>
+                        <figure>
+                            <img
+                                src="{% static 'images/wall27.jpg' %}"
+                                alt="Preview"
+                                title="Preview"
+                            />
+                        </figure>
+                        <div class="article-preview">
+                            <h2>Main Stages to make Wine</h2>
+                            <p>
+                               There are five basic stages or steps to making wine: harvesting, crushing and pressing, fermentation, clarification, and then aging and bottling.
+                                Undoubtedly, one can find endless deviations and variations along the way.
+
+
+                            </p>
+                        </div>
+                    </article>
+                    <article>
+                        <figure>
+                            <img
+                                src="{% static 'images/red1.jpg' %}"
+                                alt="Preview"
+                                title="Preview"
+                            />
+                        </figure>
+                        <div class="article-preview">
+                            <h2>Secret of Red Wine</h2>
+                            <p>
+                              Red wine is red because it was fermented with the skins, making it more tannic.
+                                White wine has less tannin, and is more acidic.
+                                Dessert wines have higher alcohol content and are usually sweeter, and sparkling wine has bubbles.
+
+
+                            </p>
+                        </div>
+                    </article>
+                    <article>
+                        <figure>
+                            <img
+                                src="{% static 'images/ban00.jpg' %}"
+                                alt="Preview"
+                                title="Preview"
+                            />
+                        </figure>
+                        <div class="article-preview">
+                            <h2>What is a Fruit Wine?</h2>
+                            <p>
+                                Fruit wines are fermented alcoholic beverages made from a variety of base ingredients (other than grapes);
+                                they may also have additional flavors taken from fruits, flowers, and herbs.
+                                This definition is sometimes broadened to include any alcoholic fermented beverage except beer.
+
+                            </p>
+                        </div>
+                    </article>
+                    <article>
+                        <figure>
+                            <img
+                                src="{% static 'images/wine3.jpg' %}"
+                                alt="Preview"
+                                title="Preview"
+                            />
+                        </figure>
+                        <div class="article-preview">
+                            <h2>Benefits of Drinking Wine</h2>
+                            <p>
+                               Red wine, in moderation, has long been thought of as heart healthy.
+                                The alcohol and certain substances in red wine called antioxidants may help prevent coronary artery disease, the condition that leads to heart attacks.
+                                Any links between red wine and fewer heart attacks aren't completely understood.
+
+
+                            </p>
+                        </div>
+                    </article>
+                    <article>
+                        <figure>
+                            <img
+                                src="{% static 'images/os.jpg' %}"
+                                alt="Preview"
+                                title="Preview"
+                            />
+                        </figure>
+                        <div class="article-preview">
+                            <h2>Health benefits</h2>
+                            <p>
+                               Drinking beyond moderation has clear impacts on a person's health," warns Dr. Septimus.
+                                "Regularly drinking more wine than recommended increases a person's risk of developing cancer, liver disease, chronic pancreatitis, sleep disorders and more."
+
+
+                            </p>
+                        </div>
+                    </article>
+
+
+                </section>
+            </span>
+        </span>
+
+    <style>
+        .background {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 80px 32px;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 1200px;
+    gap: 24px;
+
+}
+
+.articles article {
+    max-width: 320px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.articles article a {
+    display: inline-flex;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+
+.articles article h2 {
+    margin: 0 0 18px 0;
+    font-size: 1.6rem;
+    color: var(--secondary);
+    transition: color 0.3s ease-out;
+}
+
+
+.articles article img {
+    max-width: 100%;
+    transform-origin: center;
+    transition: transform 0.4s ease-in-out;
+}
+
+.article-preview {
+    padding: 24px;
+    background: white;
+}
+
+.articles figure {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.articles figure img {
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.articles article:hover img {
+    transform: scale(1.5);
+}
+
+
+    </style>
+
+
+    <footer class="ftco-footer">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2 logo"><a href="{% url 'home' %}">Wine<span>ry</span></a></h2>
+              <p>Far far away, behind the word mountains, far from the countries.</p>
+              <ul class="ftco-footer-social list-unstyled mt-2">
+                <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md">
+<!--            <div class="ftco-footer-widget mb-4 ml-md-4">-->
+<!--              <h2 class="ftco-heading-2">My Accounts</h2>-->
+<!--              <ul class="list-unstyled">-->
+<!--                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Account</a></li>-->
+<!--                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Register</a></li>-->
+<!--                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Log In</a></li>-->
+<!--                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+          </div>
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Information</h2>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'about' %}"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
+<!--                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>-->
+                <li><a href="{% url 'contact' %}"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md">
+<!--             <div class="ftco-footer-widget mb-4">-->
+<!--              <h2 class="ftco-heading-2">Quick Link</h2>-->
+<!--              <ul class="list-unstyled">-->
+<!--                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New User</a></li>-->
+<!--                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help Center</a></li>-->
+<!--                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a></li>-->
+<!--                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+          </div>
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon fa fa-map marker"></span><span class="text">75G8+VV2, Marayoor, Kerala 685620,India</span></li>
+	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+91 9846906288</span></a></li>
+	                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">Winery@domain.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid px-0 py-5 bg-black">
+      	<div class="container">
+      		<div class="row">
+	          <div class="col-md-12" style="text-align:center;">
+
+	            <p class="mb-0" style="color: rgba(255,255,255,.5);"><!--Template is licensed under CC BY 3.0. -->
+	  Copyright &copy;<script>document.write(new Date().</script> All rights reserved | <i class="fa fa-heart color-danger" aria-hidden="true"></i>
+	  <!-- Template is licensed under CC BY 3.0. --></p>
+	          </div>
+	        </div>
+      	</div>
+      </div>
+    </footer>
+
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  </body>
+</html>
